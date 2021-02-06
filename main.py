@@ -3,7 +3,6 @@ import discord  # pip install discord.py
 
 from os.path import join, dirname  # 標準ライブラリ
 from os import getenv  # 標準ライブラリ
-from os.path import join, dirname  # 標準ライブラリ
 from dotenv import load_dotenv  # pip install python-dotenv
 
 import feedparser  # pip install feedparser
