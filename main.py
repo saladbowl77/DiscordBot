@@ -1,15 +1,15 @@
 # インストールした discord.py を読み込む
-import discord
+import discord #pip install discord.py
 
 from os.path import join, dirname #標準ライブラリ
-from os import getenv
-from os.path import join, dirname
-from dotenv import load_dotenv
+from os import getenv #標準ライブラリ
+from os.path import join, dirname #標準ライブラリ
+from dotenv import load_dotenv #pip install python-dotenv
 
 import feedparser #pip install feedparser
 import requests #pip install request
 
-from dateutil.parser import parse
+from dateutil.parser import parse #pip install python-dateutil
 
 #環境変数読み込み
 load_dotenv(verbose=True)
