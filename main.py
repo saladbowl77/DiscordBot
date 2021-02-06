@@ -6,7 +6,7 @@ from os import getenv  # 標準ライブラリ
 from dotenv import load_dotenv  # pip install python-dotenv
 
 import feedparser  # pip install feedparser
-import requests  # pip install request
+import requests  # pip install requests
 
 from dateutil.parser import parse  # pip install python-dateutil
 
