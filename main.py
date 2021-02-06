@@ -31,6 +31,16 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
+    if message.content == '/tomato':
+        sendTexts = "とまとちゃんぼっとヘルプ\n"\
+                    "コマンド一覧\n"\
+                    "```/rssQiitaTags```Qiitaのタグの記事最新の5件を取得します。例```/rssQiitaTags python```\n"\
+                    "```/rssQiitaUser```Qiitaのユーザーの記事最新の5件を取得します。例```/rssQiitaUser saladbowl77```\n"\
+                    "\nそのうちまた実用的な機能も実装します\n"
+
+        embed = discord.Embed(title="",description=sendTexts,color=0xd5303e) #16進数カラーコード
+        embed.set_author(name="とまとちゃんぼっと",url="https://saladbowl.work",icon_url="")
+        await message.channel.send(embed=embed)
     if message.content[:13] == '/rssQiitaTags':
         checkUrl = "http://qiita.com/tags/" + message.content[14:] + "/feed.atom"
 
