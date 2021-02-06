@@ -34,8 +34,8 @@ async def on_message(message):
     if message.content == '/tomato':
         sendTexts = "とまとちゃんぼっとヘルプ\n"\
                     "コマンド一覧\n"\
-                    "```/rssQiitaTags```Qiitaのタグの記事最新の5件を取得します。例```/rssQiitaTags python```\n"\
-                    "```/rssQiitaUser```Qiitaのユーザーの記事最新の5件を取得します。例```/rssQiitaUser saladbowl77```\n"\
+                    "```/rssQiitaTags Qiitaのタグの記事最新の5件を取得します。``````例:/rssQiitaTags python```\n"\
+                    "```/rssQiitaUserQiitaのユーザーの記事最新の5件を取得します。``````例/rssQiitaUser saladbowl77```\n"\
                     "\nそのうちまた実用的な機能も実装します\n"
 
         embed = discord.Embed(title="",description=sendTexts,color=0xd5303e) #16進数カラーコード
