@@ -21,7 +21,6 @@ TOKEN = getenv("DISCORD_TOKEN")
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 
-
 # 起動時に動作する処理
 @client.event
 async def on_ready():
@@ -48,7 +47,7 @@ async def on_message(message):
         embed.set_author(name="とまとちゃんぼっと", url="https://saladbowl.work", icon_url="")
         await message.channel.send(embed=embed)
     if message.content[:13] == "/rssQiitaTags":
-        checkUrl = "http://qiita.com/tags/" + message.content[14:] + "/feed.atom"
+        checkUrl = f"http://qiita.com/tags/{message.content[14:]}/feed.atom"
 
         feed = feedparser.parse(
             checkUrl, response_headers={"content-type": "text/xml; charset=utf-8"}
@@ -68,23 +67,7 @@ async def on_message(message):
             for rss in feed.entries[:5]:
                 publishedTime = parse(str(rss.published))
                 publishedTime = publishedTime.strftime("%Y-%m-%d %H:%M")
-                sendTexts = (
-                    sendTexts
-                    + "["
-                    + rss.title
-                    + "]("
-                    + rss.link
-                    + ")"
-                    + "\nPublished:"
-                    + publishedTime
-                    + "\nUser:"
-                    + "["
-                    + rss.author
-                    + "](https://qiita.com/"
-                    + rss.author
-                    + ")"
-                    + "\n\n"
-                )
+                sendTexts = f"{sendTexts}[{rss.title}]({rss.link})\nPublished:{publishedTime}\nUser:[{rss.author}](https://qiita.com/{rss.author})\n\n"
 
             embed = discord.Embed(
                 title="", description=sendTexts, color=0x55C500
@@ -97,7 +80,7 @@ async def on_message(message):
             await message.channel.send(embed=embed)
 
     if message.content[:13] == "/rssQiitaUser":
-        checkUrl = "http://qiita.com/" + message.content[14:] + "/feed.atom"
+        checkUrl = f"http://qiita.com/{message.content[14:]}/feed.atom"
 
         feed = feedparser.parse(
             checkUrl, response_headers={"content-type": "text/xml; charset=utf-8"}
@@ -117,24 +100,7 @@ async def on_message(message):
             for rss in feed.entries[:5]:
                 publishedTime = parse(str(rss.published))
                 publishedTime = publishedTime.strftime("%Y-%m-%d %H:%M")
-                sendTexts = (
-                    sendTexts
-                    + "["
-                    + rss.title
-                    + "]("
-                    + rss.link
-                    + ")"
-                    + "\nPublished:"
-                    + publishedTime
-                    + "\nUser:"
-                    + "["
-                    + rss.author
-                    + "](https://qiita.com/"
-                    + rss.author
-                    + ")"
-                    + "\n\n"
-                )
-
+                sendTexts = f"{sendTexts}[{rss.title}]({rss.link})\nPublished:{publishedTime}\nUser:[{rss.author}](https://qiita.com/{rss.author})\n\n"
             embed = discord.Embed(
                 title="", description=sendTexts, color=0x55C500
             )  # 16進数カラーコード
