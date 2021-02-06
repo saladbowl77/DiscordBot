@@ -20,6 +20,7 @@ TOKEN = getenv("DISCORD_TOKEN")
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 
+
 # 起動時に動作する処理
 @client.event
 async def on_ready():
