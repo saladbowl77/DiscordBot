@@ -8,3 +8,11 @@ Issue や Pull requests お待ちしています。
 ```
 python -m pip install -r requirements.txt
 ```
+
+## dotenv の設定
+
+.env
+
+```
+DISCORD_TOKEN=<bot token>
+```
